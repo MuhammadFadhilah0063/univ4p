@@ -12,8 +12,9 @@ class MakulController extends Controller
     public function index()
     {
         $data = Makul::OrderBY('id', 'desc')->paginate(5);
+        $page = ['page' => 'makul'];
 
-        return view('makul.index', compact('data'));
+        return view('makul.index', compact('data', 'page'));
     }
 
     public function create()
@@ -76,8 +77,7 @@ class MakulController extends Controller
     {
         Makul::find($id)->delete();
 
-        // alert('Sukses', 'Hapus Data Berhasil', 'success');
-        toast('Your file has been deleted !', 'success');
+        toast('Data berhasil dihapus!', 'success');
         return redirect('/makul')->with('success', 'User deleted successfully');
     }
 }

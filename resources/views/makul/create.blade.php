@@ -6,7 +6,7 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        TAMBAH DATA Mata Kuliah
+                        TAMBAH DATA MAKUL
                         <a href="/makul" class="btn btn-md btn-success float-right">KEMBALI</a>
                     </div>
 

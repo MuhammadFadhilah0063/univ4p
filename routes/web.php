@@ -19,6 +19,6 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-
 Route::resource('makul', 'MakulController');
+
+Route::resource('mahasiswa', 'MahasiswaController');

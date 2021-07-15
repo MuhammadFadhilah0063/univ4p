@@ -6,8 +6,8 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        DATA MATA KULIAH
-                        <a href="/makul/create" class="btn btn-md btn-success float-right">Tambah Data Makul</a>
+                        DATA MAHASISWA
+                        <a href="/makul/create" class="btn btn-md btn-success float-right">Tambah Data Mahasiswa</a>
                     </div>
 
                     <div class="card-body">
@@ -15,23 +15,29 @@
                             <table class="table table-bordered">
                                 <tr>
                                     <th>NO.</th>
-                                    <th>KODE MAKUL</th>
-                                    <th>NAMA MAKUL</th>
-                                    <th>SKS</th>
+                                    <th>NPM</th>
+                                    <th>NAMA LENGKAP</th>
+                                    <th>TEMPAT, TANGGAL LAHIR</th>
+                                    <th>JENIS KELAMIN</th>
+                                    <th>TELEPON</th>
+                                    <th>ALAMAT</th>
                                     <th>AKSI</th>
                                 </tr>
 
                                 <?php $no = 1 ?>
                                 @foreach ($data as $d)
                                     <tr>
-                                        <td>{{ $no++w }}</td>
-                                        <td>{{ $d->kode_makul }}</td>
-                                        <td>{{ $d->nama_makul }}</td>
-                                        <td>{{ $d->sks }}</td>
+                                        <td>{{ $no++ }}</td>
+                                        <td>{{ $d->npm }}</td>
+                                        <td>no name</td>
+                                        <td>{{ $d->tempat_lahir }}, {{ $d->tgl_lahir }}</td>
+                                        <td>{{ $d->gender }}</td>
+                                        <td>{{ $d->telepon }}</td>
+                                        <td>{{ $d->alamat }}</td>
                                         <td>
-                                            <a href="/makul/{{ $d->id }}/edit"
+                                            <a href="/mahasiswa/{{ $d->id }}/edit"
                                                 class="btn btn-md btn-primary">Edit</a>
-                                            <form action="/makul/{{ $d->id }}" id="delete-user-form" method="post"
+                                            <form action="/mahasiswa/{{ $d->id }}" id="delete-user-form" method="post"
                                                 class="d-inline">
                                                 @csrf
                                                 @method('DELETE')
