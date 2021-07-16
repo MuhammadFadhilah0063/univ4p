@@ -17,6 +17,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/home', 'HomeController@index');
+
 Auth::routes();
 
 Route::resource('makul', 'MakulController');

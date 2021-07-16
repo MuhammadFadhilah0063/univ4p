@@ -7,7 +7,6 @@
                 <div class="card">
                     <div class="card-header">
                         TAMBAH DATA MAKUL
-                        <a href="/makul" class="btn btn-md btn-success float-right">KEMBALI</a>
                     </div>
 
                     <div class="card-body">
@@ -35,15 +34,17 @@
 
                                 <div class="col">
                                     <label for="sks" class="form-label">SKS</label>
-                                    <input type="text" class="form-control" id="sks" name="sks" placeholder="3" value="{{ old('sks') }}">
+                                    <input type="text" class="form-control" id="sks" name="sks" placeholder="3"
+                                        value="{{ old('sks') }}">
                                     @error('sks')
                                         <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
                                 </div>
                             </div>
-                            <div class="row">
+                            <div class="row float-right">
                                 <div class="col-12 mt-3">
-                                    <button type="submit" class="btn btn-primary full-width">SIMPAN</button>
+                                    <a href="/makul" class="btn btn-md btn-success">KEMBALI</a>
+                                    <button type="submit" class="btn btn-primary btn-md full-width">SIMPAN</button>
                                 </div>
                             </div>
                         </form>

@@ -7,11 +7,10 @@
                 <div class="card">
                     <div class="card-header">
                         EDIT DATA MAKUL
-                        <a href="/makul" class="btn btn-md btn-success float-right">KEMBALI</a>
                     </div>
 
                     <div class="card-body">
-                        <form action="/makul/{{ $data->id }}" method="post">
+                        <form action="/makul/{{ $makul->id }}" method="post">
                             @csrf
                             @method('PUT')
 
@@ -20,7 +19,8 @@
                                     <label for="kode_makul" class="form-label">Kode Makul</label>
                                     <input type="text" class="form-control" id="kode_makul" name="kode_makul"
                                         placeholder="MK001"
-                                        value="{{ old('kode_makul') ? old('kode_makul') : $data->kode_makul }}" autofocus>
+                                        value="{{ old('kode_makul') ? old('kode_makul') : $makul->kode_makul }}"
+                                        autofocus>
                                     @error('kode_makul')
                                         <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
@@ -30,7 +30,7 @@
                                     <label for="nama_makul" class="form-label">Nama Makul</label>
                                     <input type="text" class="form-control" id="nama_makul" name="nama_makul"
                                         placeholder="Web 1"
-                                        value="{{ old('nama_makul') ? old('nama_makul') : $data->nama_makul }}">
+                                        value="{{ old('nama_makul') ? old('nama_makul') : $makul->nama_makul }}">
                                     @error('nama_makul')
                                         <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
@@ -39,14 +39,15 @@
                                 <div class="col">
                                     <label for="sks" class="form-label">SKS</label>
                                     <input type="text" class="form-control" id="sks" name="sks" placeholder="3"
-                                        value="{{ old('sks') ? old('sks') : $data->sks }}">
+                                        value="{{ old('sks') ? old('sks') : $makul->sks }}">
                                     @error('sks')
                                         <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
                                 </div>
                             </div>
-                            <div class="row">
+                            <div class="row float-right">
                                 <div class="col-12 mt-3">
+                                    <a href="/makul" class="btn btn-md btn-success">KEMBALI</a>
                                     <button type="submit" class="btn btn-primary full-width">SIMPAN</button>
                                 </div>
                             </div>

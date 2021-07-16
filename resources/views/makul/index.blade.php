@@ -12,8 +12,8 @@
 
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table class="table table-bordered">
-                                <tr>
+                            <table class="table table-bordered text-center table-hover">
+                                <tr class="bg-dark text-white">
                                     <th>NO.</th>
                                     <th>KODE MAKUL</th>
                                     <th>NAMA MAKUL</th>
@@ -21,17 +21,19 @@
                                     <th>AKSI</th>
                                 </tr>
 
-                                <?php $no = 1 ?>
-                                @foreach ($data as $d)
+                                @php
+                                    $no = 1;
+                                @endphp
+                                @foreach ($makul as $m)
                                     <tr>
-                                        <td>{{ $no++w }}</td>
-                                        <td>{{ $d->kode_makul }}</td>
-                                        <td>{{ $d->nama_makul }}</td>
-                                        <td>{{ $d->sks }}</td>
+                                        <td>{{ $no++ }}</td>
+                                        <td>{{ $m->kode_makul }}</td>
+                                        <td>{{ $m->nama_makul }}</td>
+                                        <td>{{ $m->sks }}</td>
                                         <td>
-                                            <a href="/makul/{{ $d->id }}/edit"
+                                            <a href="/makul/{{ $m->id }}/edit"
                                                 class="btn btn-md btn-primary">Edit</a>
-                                            <form action="/makul/{{ $d->id }}" id="delete-user-form" method="post"
+                                            <form action="/makul/{{ $m->id }}" id="delete-user-form" method="post"
                                                 class="d-inline">
                                                 @csrf
                                                 @method('DELETE')

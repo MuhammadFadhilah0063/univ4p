@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Makul;
+use App\Makul;
 use Illuminate\Http\Request;
 use Alert;
 
@@ -11,15 +11,17 @@ class MakulController extends Controller
 {
     public function index()
     {
-        $data = Makul::OrderBY('id', 'desc')->paginate(5);
-        $page = ['page' => 'makul'];
+        $makul = Makul::OrderBY('id', 'desc')->paginate(5);
+        $page = 'makul';
 
-        return view('makul.index', compact('data', 'page'));
+        return view('makul.index', compact('makul', 'page'));
     }
 
     public function create()
     {
-        return view('makul.create');
+        $page = 'makul';
+
+        return view('makul.create', compact('page'));
     }
 
     public function store(Request $request)
@@ -48,9 +50,10 @@ class MakulController extends Controller
 
     public function edit($id)
     {
-        $data = Makul::find($id);
+        $makul = Makul::find($id);
+        $page = 'makul';
 
-        return view('makul.edit', compact('data'));
+        return view('makul.edit', compact('makul', 'page'));
     }
 
     public function update(Request $request, $id)
@@ -69,7 +72,6 @@ class MakulController extends Controller
         ]);
 
         alert('Sukses', 'Edit Data Berhasil', 'success');
-
         return redirect('/makul');
     }
 
