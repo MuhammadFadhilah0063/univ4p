@@ -6,7 +6,11 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        TAMBAH DATA MAHASISWA
+                        <div class="row">
+                            <div class="col">
+                                <span class="title-header">TAMBAH DATA MAHASISWA</span>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="card-body">

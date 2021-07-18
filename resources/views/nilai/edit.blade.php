@@ -1,13 +1,17 @@
 @extends('layouts.app')
 
 @section('content')
-{{-- {{ dd($makul) }} --}}
+    {{-- {{ dd($makul) }} --}}
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        EDIT DATA NILAI MAHASISWA
+                        <div class="row">
+                            <div class="col">
+                                <span class="title-header">EDIT DATA NILAI MAHASISWA</span>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="card-body">
@@ -21,7 +25,9 @@
                                     <select name="user_id" id="user_id" class="form-control">
                                         <option value="" disabled>--Pilih User--</option>
                                         @foreach ($user as $u)
-                                            <option value="{{ $u->id }}" {{ $nilai->user_id == $u->id ? "selected" : "" }}>{{ $u->name }}</option>
+                                            <option value="{{ $u->id }}"
+                                                {{ $nilai->user_id == $u->id ? 'selected' : '' }}>{{ $u->name }}
+                                            </option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -33,7 +39,9 @@
                                     <select name="makul_id" id="makul_id" class="form-control">
                                         <option value="" disabled>--Pilih Makul--</option>
                                         @foreach ($makul as $m)
-                                            <option value="{{ $m->id }}" {{ $nilai->makul_id == $m->id ? "selected" : "" }}>{{ $m->nama_makul }}</option>
+                                            <option value="{{ $m->id }}"
+                                                {{ $nilai->makul_id == $m->id ? 'selected' : '' }}>{{ $m->nama_makul }}
+                                            </option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -42,8 +50,8 @@
                             <div class="row mt-3">
                                 <div class="col">
                                     <label for="nilai" class="form-label">Nilai</label>
-                                    <input type="number" class="form-control" id="nilai" name="nilai"
-                                        placeholder="70" value="{{ (old('nilai')) ? old('nilai') : $nilai->nilai}}">
+                                    <input type="number" class="form-control" id="nilai" name="nilai" placeholder="70"
+                                        value="{{ old('nilai') ? old('nilai') : $nilai->nilai }}">
                                     @error('nilai')
                                         <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror

@@ -6,7 +6,11 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        TAMBAH DATA NILAI MAHASISWA
+                        <div class="row">
+                            <div class="col">
+                                <span class="title-header">TAMBAH DATA NILAI MAHASISWA</span>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="card-body">
@@ -40,8 +44,8 @@
                             <div class="row mt-3">
                                 <div class="col">
                                     <label for="nilai" class="form-label">Nilai</label>
-                                    <input type="number" class="form-control" id="nilai" name="nilai"
-                                        placeholder="70" value="{{ old('nilai') }}">
+                                    <input type="number" class="form-control" id="nilai" name="nilai" placeholder="70"
+                                        value="{{ old('nilai') }}">
                                     @error('nilai')
                                         <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror

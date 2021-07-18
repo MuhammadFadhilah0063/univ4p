@@ -6,8 +6,16 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        DATA MAHASISWA
-                        <a href="/mahasiswa/create" class="btn btn-md btn-success float-right">Tambah Data Mahasiswa</a>
+                        <div class="row">
+                            <div class="col col-9">
+                                <span class="title-header">DATA MAHASISWA</span>
+                            </div>
+
+                            <div class="col col-3">
+                                <a href="/mahasiswa/create"
+                                    class="btn btn-md btn-success text-light fw-bold float-right">Tambah Data Mahasiswa</a>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="card-body">

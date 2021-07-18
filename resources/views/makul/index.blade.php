@@ -1,13 +1,20 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
-        <div class="row justify-content-center">
+    <div class="container ">
+        <div class="row justify-content-center ">
             <div class="col-md-12">
-                <div class="card">
+                <div class="card bg-light">
                     <div class="card-header">
-                        DATA MATA KULIAH
-                        <a href="/makul/create" class="btn btn-md btn-success float-right">Tambah Data Makul</a>
+                        <div class="row">
+                            <div class="col col-9">
+                                <span class="title-header">DATA MATA KULIAH</span>
+                            </div>
+
+                            <div class="col col-3">
+                                <a href="/makul/create" class="btn btn-md btn-success text-light fw-bold float-right">Tambah Data Makul</a>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="card-body">

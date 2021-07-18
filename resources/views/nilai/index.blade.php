@@ -1,14 +1,20 @@
 @extends('layouts.app')
 
 @section('content')
-    {{-- {{ dd($nilai->nama_makul) }} --}}
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        DATA NILAI MAHASISWA
-                        <a href="/nilai/create" class="btn btn-md btn-success float-right">Tambah Data Nilai</a>
+                        <div class="row">
+                            <div class="col col-9">
+                                <span class="title-header">DATA NILAI MAHASISWA</span>
+                            </div>
+
+                            <div class="col col-3">
+                                <a href="/nilai/create" class="btn btn-md btn-success text-light fw-bold float-right">Tambah Data Nilai</a>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="card-body">

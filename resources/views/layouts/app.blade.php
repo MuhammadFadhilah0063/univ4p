@@ -19,33 +19,34 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
 
 </head>
 
-<body>
+<body class="bg-secondary">
     @include('sweetalert::alert')
 
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-light bg-dark shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <a class="navbar-brand text-light" href="{{ url('/') }}">
                     UNIV4P
                 </a>
                 <div class="collapse navbar-collapse">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
                             {{-- <a class="nav-link {{ $page == 'makul' ? 'active text-danger' : '' }}" href="/makul">Makul</a> --}}
-                            <a class="nav-link" href="/makul">Makul</a>
+                            <a class="nav-link text-light" href="/makul">Makul</a>
                         </li>
 
                         <li class="nav-item">
                             {{-- <a class="nav-link {{ $page == 'mahasiswa' ? 'active text-danger' : '' }}" href="/mahasiswa">Mahasiswa</a> --}}
-                            <a class="nav-link" href="/mahasiswa">Mahasiswa</a>
+                            <a class="nav-link text-light" href="/mahasiswa">Mahasiswa</a>
                         </li>
 
                         <li class="nav-item">
                             {{-- <a class="nav-link {{ $page == 'nilai' ? 'active' : '' }}" href="/nilai">Nilai</a> --}}
-                            <a class="nav-link" href="/nilai">Nilai</a>
+                            <a class="nav-link text-light" href="/nilai">Nilai</a>
                         </li>
                     </ul>
                 </div>
@@ -68,11 +69,11 @@
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="nav-link text-light" href="{{ route('login') }}">{{ __('Login') }}</a>
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link text-light" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
                             @endif
                         @else
