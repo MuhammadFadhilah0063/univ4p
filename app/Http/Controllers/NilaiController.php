@@ -16,7 +16,7 @@ class NilaiController extends Controller
      */
     public function index()
     {
-        $nilai = Nilai::all();
+        $nilai = Nilai::orderBy('id', 'desc')->paginate(6);
         
         return view('nilai.index', compact('nilai'));
     }

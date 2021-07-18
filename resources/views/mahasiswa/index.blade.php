@@ -31,7 +31,7 @@
                                     <tr>
                                         <td>{{ $no++ }}</td>
                                         <td>{{ $mhs->npm }}</td>
-                                        <td>{{ $mhs->user->name}}</td>
+                                        <td>{{ $mhs->user->name }}</td>
                                         <td>{{ $mhs->tempat_lahir }}, {{ $mhs->tgl_lahir }}</td>
                                         <td>{{ $mhs->gender }}</td>
                                         <td>{{ $mhs->telepon }}</td>
@@ -51,6 +51,12 @@
                                 @endforeach
                             </table>
                         </div>
+
+                        <nav aria-label="Page navigation example">
+                            <div class="pagination justify-content-center">
+                                {{ $mahasiswa->links() }}
+                            </div>
+                        </nav>
                     </div>
                 </div>
             </div>

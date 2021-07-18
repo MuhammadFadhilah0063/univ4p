@@ -11,7 +11,7 @@ class MakulController extends Controller
 {
     public function index()
     {
-        $makul = Makul::OrderBY('id', 'desc')->paginate(5);
+        $makul = Makul::OrderBY('id', 'desc')->paginate(6);
         $page = 'makul';
 
         return view('makul.index', compact('makul', 'page'));

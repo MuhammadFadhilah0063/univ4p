@@ -45,6 +45,12 @@
                                 @endforeach
                             </table>
                         </div>
+
+                        <nav aria-label="Page navigation example">
+                            <div class="pagination justify-content-center">
+                                {{ $makul->links() }}
+                            </div>
+                        </nav>
                     </div>
                 </div>
             </div>
