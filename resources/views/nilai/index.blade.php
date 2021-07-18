@@ -1,13 +1,14 @@
 @extends('layouts.app')
 
 @section('content')
+    {{-- {{ dd($nilai->nama_makul) }} --}}
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        DATA MATA KULIAH
-                        <a href="/makul/create" class="btn btn-md btn-success float-right">Tambah Data Makul</a>
+                        DATA NILAI MAHASISWA
+                        <a href="/nilai/create" class="btn btn-md btn-success float-right">Tambah Data Nilai</a>
                     </div>
 
                     <div class="card-body">
@@ -15,25 +16,29 @@
                             <table class="table table-bordered text-center table-hover">
                                 <tr class="bg-dark text-white">
                                     <th>NO.</th>
-                                    <th>KODE MAKUL</th>
-                                    <th>NAMA MAKUL</th>
+                                    <th>NPM</th>
+                                    <th>NAMA MAHASISWA</th>
+                                    <th>NAMA MATKUL</th>
                                     <th>SKS</th>
+                                    <th>NILAI</th>
                                     <th>AKSI</th>
                                 </tr>
 
                                 @php
                                     $no = 1;
                                 @endphp
-                                @foreach ($makul as $m)
+                                @foreach ($nilai as $n)
                                     <tr>
                                         <td>{{ $no++ }}</td>
-                                        <td>{{ $m->kode_makul }}</td>
-                                        <td>{{ $m->nama_makul }}</td>
-                                        <td>{{ $m->sks }}</td>
+                                        <td>{{ $n->mahasiswa->npm }}</td>
+                                        <td>{{ $n->mahasiswa->user->name }}</td>
+                                        <td>{{ $n->makul->nama_makul }}</td>
+                                        <td>{{ $n->makul->sks }}</td>
+                                        <td>{{ $n->nilai }}</td>
                                         <td>
-                                            <a href="/makul/{{ $m->id }}/edit"
+                                            <a href="/nilai/{{ $n->id }}/edit"
                                                 class="btn btn-md btn-primary">Edit</a>
-                                            <form action="/makul/{{ $m->id }}" method="post" id="delete-form"
+                                            <form action="/nilai/{{ $n->id }}" method="post" id="delete-form"
                                                 class="d-inline">
                                                 @csrf
                                                 @method('DELETE')
@@ -44,6 +49,7 @@
                                     </tr>
                                 @endforeach
                             </table>
+
                         </div>
                     </div>
                 </div>

@@ -38,7 +38,7 @@
 
                                 <div class="col">
                                     <label for="sks" class="form-label">SKS</label>
-                                    <input type="text" class="form-control" id="sks" name="sks" placeholder="3"
+                                    <input type="number" class="form-control" id="sks" name="sks" placeholder="3"
                                         value="{{ old('sks') ? old('sks') : $makul->sks }}">
                                     @error('sks')
                                         <div class="alert alert-danger">{{ $message }}</div>

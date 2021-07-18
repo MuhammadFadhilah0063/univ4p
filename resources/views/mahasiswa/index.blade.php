@@ -39,12 +39,12 @@
                                         <td>
                                             <a href="/mahasiswa/{{ $mhs->id }}/edit"
                                                 class="btn btn-md btn-primary">Edit</a>
-                                            <form action="/mahasiswa/{{ $mhs->id }}" id="delete-user-form" method="post"
+                                            <form action="/mahasiswa/{{ $mhs->id }}" method="post" id="delete-form"
                                                 class="d-inline">
                                                 @csrf
                                                 @method('DELETE')
 
-                                                <button class="btn btn-md btn-danger" id="delete">Hapus</button>
+                                                <button class="btn btn-md btn-danger delete" id="delete">Hapus</button>
                                             </form>
                                         </td>
                                     </tr>

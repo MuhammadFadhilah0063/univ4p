@@ -79,7 +79,6 @@ class MakulController extends Controller
     {
         Makul::find($id)->delete();
 
-        toast('Data berhasil dihapus!', 'success');
         return redirect('/makul')->with('success', 'User deleted successfully');
     }
 }

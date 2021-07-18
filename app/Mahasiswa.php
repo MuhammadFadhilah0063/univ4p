@@ -3,6 +3,7 @@
 namespace App;
 
 use App\User;
+use App\Nilai;
 use Illuminate\Database\Eloquent\Model;
 
 class Mahasiswa extends Model
@@ -14,5 +15,10 @@ class Mahasiswa extends Model
     public function user()
     {
         return $this->belongsTo(User::class, 'user_id', 'id');
+    }
+
+    public function nilai()
+    {
+        return $this->hasOne(Nilai::class, 'user_id', 'id');
     }
 }

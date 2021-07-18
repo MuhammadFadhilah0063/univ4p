@@ -50,7 +50,7 @@ class MahasiswaController extends Controller
 
     public function show($id)
     {
-        //
+
     }
 
     public function edit($id)
@@ -90,7 +90,6 @@ class MahasiswaController extends Controller
     {
         Mahasiswa::find($id)->delete();
 
-        toast('Data berhasil dihapus!', 'success');
         return redirect('/mahasiswa')->with('success', 'User deleted successfully');
     }
 }

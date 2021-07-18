@@ -10,4 +10,9 @@ class Makul extends Model
     protected $guarded = ['id'];
     protected $primarykey = 'id';
     public $timestamps    = false;
+
+    public function nilai()
+    {
+        return $this->hasOne(Nilai::class, 'makul_id', 'id');
+    }
 }
