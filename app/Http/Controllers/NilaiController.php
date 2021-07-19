@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Makul;
 use App\Nilai;
-use App\User;
+use App\Mahasiswa;
 use Illuminate\Http\Request;
 
 class NilaiController extends Controller
@@ -28,10 +28,10 @@ class NilaiController extends Controller
      */
     public function create()
     {
-        $user = User::all();
+        $mahasiswa = Mahasiswa::all();
         $makul = Makul::all();
 
-        return view('nilai.create', compact('user', 'makul'));
+        return view('nilai.create', compact('mahasiswa', 'makul'));
     }
 
     /**
@@ -46,11 +46,11 @@ class NilaiController extends Controller
             'nilai' => 'required|max:3'
         ]);
 
-        // dd($request->user_id);
+        // dd($request);
 
         // cara mass asignable
         Nilai::create([
-            'user_id' => $request->user_id,
+            'mahasiswa_id' => $request->mahasiswa_id,
             'makul_id' => $request->makul_id,
             'nilai' => $request->nilai
         ]);
@@ -78,11 +78,11 @@ class NilaiController extends Controller
      */
     public function edit($id)
     {
-        $user = User::all();
+        $mahasiswa = Mahasiswa::all();
         $makul = Makul::all();
         $nilai = Nilai::find($id);
 
-        return view('nilai.edit', compact('makul', 'user', 'nilai'));
+        return view('nilai.edit', compact('makul', 'mahasiswa', 'nilai'));
     }
 
     /**
@@ -100,7 +100,7 @@ class NilaiController extends Controller
 
         // cara mass asignable
         Nilai::find($id)->update([
-            'user_id' => $request->user_id,
+            'mahasiswa_id' => $request->mahasiswa_id,
             'makul_id' => $request->makul_id,
             'nilai' => $request->nilai
         ]);

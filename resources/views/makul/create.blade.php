@@ -19,10 +19,10 @@
 
                             <div class="row">
                                 <div class="col">
-                                    <label for="kode_makul" class="form-label">Kode Makul</label>
-                                    <input type="text" class="form-control" id="kode_makul" name="kode_makul"
-                                        placeholder="MK001" value="{{ old('kode_makul') }}" autofocus>
-                                    @error('kode_makul')
+                                    <label for="kd_makul" class="form-label">Kode Makul</label>
+                                    <input type="text" class="form-control" id="kd_makul" name="kd_makul"
+                                        placeholder="MK001" value="{{ old('kd_makul') }}" autofocus>
+                                    @error('kd_makul')
                                         <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
                                 </div>

@@ -21,12 +21,12 @@
 
                             <div class="row">
                                 <div class="col">
-                                    <label for="user_id" class="form-label">Nama Mahasiswa</label>
-                                    <select name="user_id" id="user_id" class="form-control">
+                                    <label for="mahasiswa_id" class="form-label">Nama Mahasiswa</label>
+                                    <select name="mahasiswa_id" id="mahasiswa_id" class="form-control">
                                         <option value="" disabled>--Pilih User--</option>
-                                        @foreach ($user as $u)
-                                            <option value="{{ $u->id }}"
-                                                {{ $nilai->user_id == $u->id ? 'selected' : '' }}>{{ $u->name }}
+                                        @foreach ($mahasiswa as $mhs)
+                                            <option value="{{ $mhs->id }}"
+                                                {{ $nilai->mahasiswa_id == $mhs->id ? 'selected' : '' }}>{{ $mhs->user->name }}
                                             </option>
                                         @endforeach
                                     </select>

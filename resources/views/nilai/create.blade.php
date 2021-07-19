@@ -19,11 +19,11 @@
 
                             <div class="row">
                                 <div class="col">
-                                    <label for="user_id" class="form-label">Nama Mahasiswa</label>
-                                    <select name="user_id" id="user_id" class="form-control">
+                                    <label for="mahasiswa_id" class="form-label">Nama Mahasiswa</label>
+                                    <select name="mahasiswa_id" id="mahasiswa_id" class="form-control">
                                         <option value="" disabled>--Pilih Mahasiswa--</option>
-                                        @foreach ($user as $u)
-                                            <option value="{{ $u->id }}">{{ $u->name }}</option>
+                                        @foreach ($mahasiswa as $mhs)
+                                            <option value="{{ $mhs->id }}">{{ $mhs->user->name }}</option>
                                         @endforeach
                                     </select>
                                 </div>

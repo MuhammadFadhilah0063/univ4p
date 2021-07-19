@@ -9,12 +9,12 @@ use Illuminate\Database\Eloquent\Model;
 class Nilai extends Model
 {
     protected $table = 'nilai';
-    protected $fillable = ['user_id', 'makul_id', 'nilai'];
+    protected $fillable = ['makul_id', 'mahasiswa_id', 'nilai'];
     public $timestamps    = false;
 
     public function mahasiswa()
     {
-        return $this->belongsTo(Mahasiswa::class, 'user_id', 'id');
+        return $this->belongsTo(Mahasiswa::class, 'mahasiswa_id', 'id');
     }
 
     public function makul()

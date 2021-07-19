@@ -25,14 +25,14 @@ class MakulController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'kode_makul' => 'required|min:5',
+            'kd_makul' => 'required|min:5',
             'nama_makul' => 'required',
             'sks' => 'required|max:1'
         ]);
 
         // cara mass asignable
         Makul::create([
-            'kode_makul' => $request->kode_makul,
+            'kd_makul' => $request->kd_makul,
             'nama_makul' => $request->nama_makul,
             'sks' => $request->sks
         ]);
@@ -56,14 +56,14 @@ class MakulController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'kode_makul' => 'required|min:5',
+            'kd_makul' => 'required|min:5',
             'nama_makul' => 'required',
             'sks' => 'required|max:1'
         ]);
 
         // cara mass asignable
         Makul::find($id)->update([
-            'kode_makul' => $request->kode_makul,
+            'kd_makul' => $request->kd_makul,
             'nama_makul' => $request->nama_makul,
             'sks' => $request->sks
         ]);
