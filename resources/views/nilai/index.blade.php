@@ -31,11 +31,11 @@
                                 </tr>
 
                                 @php
-                                    $no = 1;
+                                    $no;
                                 @endphp
-                                @foreach ($nilai as $n)
+                                @foreach ($nilai as $no => $n)
                                     <tr>
-                                        <td>{{ $no++ }}</td>
+                                        <td>{{ ++$no + ($nilai->currentPage()-1) * $nilai->perPage() }}</td>
                                         <td>{{ $n->mahasiswa->npm }}</td>
                                         <td>{{ $n->mahasiswa->user->name }}</td>
                                         <td>{{ $n->makul->nama_makul }}</td>

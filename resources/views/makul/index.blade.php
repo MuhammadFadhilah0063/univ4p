@@ -29,11 +29,11 @@
                                 </tr>
 
                                 @php
-                                    $no = 1;
+                                    $no;
                                 @endphp
-                                @foreach ($makul as $m)
+                                @foreach ($makul as $no => $m)
                                     <tr>
-                                        <td>{{ $no++ }}</td>
+                                        <td>{{ ++$no + ($makul->currentPage()-1) * $makul->perPage() }}</td>
                                         <td>{{ $m->kode_makul }}</td>
                                         <td>{{ $m->nama_makul }}</td>
                                         <td>{{ $m->sks }}</td>
