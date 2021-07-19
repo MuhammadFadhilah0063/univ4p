@@ -4,3 +4,18 @@
     font-weight: bold;
     text-shadow: 1.5px 1.5px rgb(231, 225, 225);
 }
+
+ul#ul-link a.link-nav 
+{
+    color: rgb(255, 255, 255);
+}
+
+ul#ul-link a.link-nav:hover 
+{
+    color: rgba(238, 234, 234, 0.295);
+}
+
+ul#ul-link a.active {
+    color: rgba(235, 15, 15, 0.932);
+    font-weight: bold;
+}

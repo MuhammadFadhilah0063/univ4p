@@ -12,16 +12,14 @@ class MakulController extends Controller
     public function index()
     {
         $makul = Makul::OrderBY('id', 'desc')->paginate(6);
-        $page = 'makul';
 
-        return view('makul.index', compact('makul', 'page'));
+        return view('makul.index', compact('makul'));
     }
 
     public function create()
     {
-        $page = 'makul';
 
-        return view('makul.create', compact('page'));
+        return view('makul.create');
     }
 
     public function store(Request $request)
@@ -51,9 +49,8 @@ class MakulController extends Controller
     public function edit($id)
     {
         $makul = Makul::find($id);
-        $page = 'makul';
 
-        return view('makul.edit', compact('makul', 'page'));
+        return view('makul.edit', compact('makul'));
     }
 
     public function update(Request $request, $id)
